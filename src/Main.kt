@@ -15,14 +15,15 @@
 val cells = mutableListOf<String?>()
 fun main() {
     createCells()
-    showCells()
     addCoin()
+    showCells()
+
 
 }
 
 fun createCells() {
     for (i in 1..16) {
-        cells.add("EMPTY")
+        cells.add("...")
     }
 }
 
@@ -48,20 +49,19 @@ fun showCells() {
 
 
 fun addCoin() {
-    val whiteCoin = "white"
-    val blackCoin = "black"
+
 
     for (i in 1..4) {
 
         print("Enter white coin positions: ")
-        val position = readlnOrNull()?.trim()?.uppercase()
+        val wPosition = "white"
 
-        if (position.isNullOrEmpty()) {
+        if (wPosition.isNullOrEmpty()) {
             println("No position entered.")
             return
         }
 
-        if (position.length > 8) {
+        if (wPosition.length > 8) {
             println("Input too long.")
             return
         }
@@ -79,8 +79,8 @@ fun addCoin() {
         val index = cell - 1
 
         if (index in 0..15) {
-            if (cells[index] == "EMPTY") {
-                cells[index] = position
+            if (cells[index] == "...") {
+                cells[index] = wPosition
             } else {
                 println("Cell already occupied.")
             }
