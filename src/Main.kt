@@ -16,7 +16,7 @@ val cells = mutableListOf<String?>()
 fun main() {
     createCells()
     showCells()
-    println("Hello World!")
+    
 }
 
 fun createCells() {
@@ -27,20 +27,23 @@ fun createCells() {
 
 fun showCells() {
     for (i in 1..cells.size) {
-        print("   CELL $i  ")
+        val cellNum = "cell $i"
+        print("   ${cellNum.padEnd(length = 8)}  ")
     }
     println()
-    print("┌──────────")
-    print("┬──────────".repeat(cells.size - 1))
+    print("┌────────────")
+    print("┬────────────".repeat(cells.size - 1))
     println("┐")
 
     for (cell in cells) {
-        print("│ ${cell?.padEnd(8)} ")
+        print("│ ${cell?.padEnd(10)} ")
     }
     print("│")
     println()
-    print("└──────────")
-    print("┴──────────".repeat(cells.size - 1))
+    print("└────────────")
+    print("┴────────────".repeat(cells.size - 1))
     println("┘")
 }
+
+
 
