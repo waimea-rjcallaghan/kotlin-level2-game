@@ -11,7 +11,7 @@
  * =====================================================================
  */
 
-val cell = mutableListOf<Int?>()
+
 val cells = mutableListOf<String?>()
 fun main() {
     print("Enter your name player one: ")
@@ -64,7 +64,7 @@ fun addCoin() {
 
 
 
-    if (cell.size < 4) {
+    if (cells.size < 4) {
 
         print("Entering white coin positions ")
         val wPosition = "white"
