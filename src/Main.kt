@@ -11,13 +11,25 @@
  * =====================================================================
  */
 
-
+val cell = mutableListOf<Int?>()
 val cells = mutableListOf<String?>()
 fun main() {
+    print("Enter your name player one: ")
+    val player1 = readln()
+    print("Enter your name player two: ")
+    val player2 = readln()
     createCells()
     addCoin()
     showCells()
 
+    while (true) {
+        println("player one $player1's turn")
+        moveCoin()
+        showCells()
+        println("player two $player2's turn")
+        moveCoin()
+        showCells()
+    }
 
 }
 
@@ -51,28 +63,20 @@ fun showCells() {
 fun addCoin() {
 
 
-    for (i in 1..4) {
 
-        print("Enter white coin positions: ")
+    if (cell.size < 4) {
+
+        print("Entering white coin positions ")
         val wPosition = "white"
 
-        if (wPosition.isNullOrEmpty()) {
-            println("No position entered.")
-            return
-        }
-
-        if (wPosition.length > 8) {
-            println("Input too long.")
-            return
-        }
 
         println()
 
-        print("Enter Cell Number 1 to 16: ")
-        val cell = readlnOrNull()?.toIntOrNull()
+        println("generating cell positions... ")
+        val cell = (1..16).random()
 
         if (cell == null) {
-            println("Invalid number.")
+            println("Invalid cell.")
             return
         }
 
@@ -87,6 +91,30 @@ fun addCoin() {
         } else {
             println("Invalid Cell Number.")
         }
+    }
+}
+
+fun moveCoin() {
+    print("Enter first cell number: ")
+    val cell1 = readlnOrNull()?.toIntOrNull()
+
+    print("Enter second cell number: ")
+    val cell2 = readlnOrNull()?.toIntOrNull()
+
+    if (cell1 == null || cell2 == null) {
+        println("Invalid number entered.")
+        return
+    }
+
+    val index1 = cell1 - 1
+    val index2 = cell2 - 1
+
+    if (index1 in 0..15 && index2 in 0..15) {
+        val temp = cells[index1]
+        cells[index1] = cells[index2]
+        cells[index2] = temp
+    } else {
+        println("Invalid cell number.")
     }
 }
 
