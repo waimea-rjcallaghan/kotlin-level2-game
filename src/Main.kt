@@ -130,7 +130,10 @@ fun moveCoin() {
 
 fun removeCoin() {
     val index = 0
+    if (cells[index] == "black") {
+        println("youwin")
     cells[index] = "..."
+    }
 
 }
 
