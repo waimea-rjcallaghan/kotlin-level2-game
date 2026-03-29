@@ -19,15 +19,35 @@ fun main() {
     print("Enter your name player two: ")
     val player2 = readln()
     createCells()
-    addCoin()
+    addCoins()
     showCells()
 
     while (true) {
         println("player one $player1's turn")
-        moveCoin()
+        println("[M]ove coin")
+        println("[R]emove coin")
+        print("? ")
+        val player1Choice = readln()
+
+        when (player1Choice) {
+            "M" -> moveCoin()
+            "m" -> moveCoin()
+            "R" -> removeCoin()
+            "r" -> removeCoin()
+        }
         showCells()
         println("player two $player2's turn")
-        moveCoin()
+        println("[M]ove coin")
+        println("[R]emove coin")
+        print("? ")
+        val player2Choice = readln()
+
+        when (player2Choice) {
+            "M" -> moveCoin()
+            "m" -> moveCoin()
+            "R" -> removeCoin()
+            "r" -> removeCoin()
+        }
         showCells()
     }
 
@@ -60,37 +80,27 @@ fun showCells() {
 }
 
 
-fun addCoin() {
+fun addCoins() {
+    val coin = "black"
+    val index = (2..<16).random()
+    cells[index] = coin
 
+    while (true) {
+        val coin = "white"
+        val index = (0..<16).random()
 
-
-    if (cells.size < 4) {
-
-        print("Entering white coin positions ")
-        val wPosition = "white"
-
-
-        println()
-
-        println("generating cell positions... ")
-        val cell = (1..16).random()
-
-        if (cell == null) {
-            println("Invalid cell.")
-            return
+        if (cells[index] == "...") {
+            cells[index] = coin
         }
 
-        val index = cell - 1
-
-        if (index in 0..15) {
-            if (cells[index] == "...") {
-                cells[index] = wPosition
-            } else {
-                println("Cell already occupied.")
-            }
-        } else {
-            println("Invalid Cell Number.")
+        // count coins added
+        var count = 0
+        for (cell in cells) {
+            if (cell == coin) count++
         }
+
+        // Have we got four now?
+        if (count >= 4) break
     }
 }
 
@@ -116,6 +126,12 @@ fun moveCoin() {
     } else {
         println("Invalid cell number.")
     }
+}
+
+fun removeCoin() {
+    val index = 0
+    cells[index] = "..."
+
 }
 
 
