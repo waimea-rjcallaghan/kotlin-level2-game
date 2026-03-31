@@ -13,6 +13,7 @@
 
 
 val cells = mutableListOf<String?>()
+var blackCell = 0
 fun main() {
     print("Enter your name player one: ")
     val player1 = readln()
@@ -35,6 +36,17 @@ fun main() {
             "R" -> removeCoin()
             "r" -> removeCoin()
         }
+
+        if (blackCell == 1) {
+            println("|--------------------------------------------------|")
+            println("|                                                  |")
+            println("|${"you win ($player1) playerone".padEnd(length = 50)}|")
+            println("|                                                  |")
+            println("|--------------------------------------------------|")
+            break
+
+
+        }
         showCells()
         println("player two $player2's turn")
         println("[M]ove coin")
@@ -48,6 +60,17 @@ fun main() {
             "R" -> removeCoin()
             "r" -> removeCoin()
         }
+        if (blackCell == 1){
+            println("|----------------------------------------------------------|")
+            println("|                                                          |")
+            println("|${"you win ($player2) playertwo".padEnd(length = 50)}|")
+            println("|                                                          |")
+            println("|----------------------------------------------------------|")
+            break
+
+
+        }
+
         showCells()
     }
 
@@ -131,9 +154,12 @@ fun moveCoin() {
 fun removeCoin() {
     val index = 0
     if (cells[index] == "black") {
-        println("youwin")
-    cells[index] = "..."
+        blackCell = 1
     }
+    if (cells[index] == "white") {
+            cells[index] = "..."
+        }
+
 
 }
 
