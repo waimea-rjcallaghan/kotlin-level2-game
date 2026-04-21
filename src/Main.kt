@@ -19,9 +19,12 @@ fun main() {
     var ruleChoice = null
 
     while (ruleChoice != "y, n") {
+        println("Welcome to Pinned!!!")
+
         println("[Y]es")
         println("[N]o")
         println("Would you like to see the game rules? ")
+
         var ruleChoice = readln()
         if (ruleChoice == "y") {
             println("Pinned \uD83D\uDCCC \n" +
