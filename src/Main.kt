@@ -20,8 +20,13 @@ fun main() {
 
     while (ruleChoice != "y, n") {
         println("Welcome to Pinned!!!")
-
-        println("[Y]es")
+        println("           _                      __\n" +
+                "    ____  (_)___  ____  ___  ____/ /\n" +
+                "   / __ \\/ / __ \\/ __ \\/ _ \\/ __  / \n" +
+                "  / /_/ / / / / / / / /  __/ /_/ /  \n" +
+                " / .___/_/_/ /_/_/ /_/\\___/\\__,_/   \n" +
+                "/_/                                 ")
+                println("[Y]es")
         println("[N]o")
         println("Would you like to see the game rules? ")
 
