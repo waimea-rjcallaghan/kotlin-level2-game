@@ -7,6 +7,7 @@
  * GitHub Repo:    GITHUB REPO URL HERE
  * ---------------------------------------------------------------------
  * Notes:
+ *
  * PROJECT NOTES HERE
  * =====================================================================
  */
@@ -83,12 +84,16 @@ fun main() {
         print("? ")
         val player1Choice = readln()
 
+
+// the player can press R if they want to remove a coin from the board while it is on cell 1,
+// or they can press M if they want to move a coin a cross the grid
         when (player1Choice) {
             "M" -> moveCoin()
             "m" -> moveCoin()
             "R" -> removeCoin()
             "r" -> removeCoin()
         }
+        // creates a win screen for player one
 
         if (blackCell == 1) {
             println("|--------------------------------------------------|")
@@ -113,6 +118,7 @@ fun main() {
             "R" -> removeCoin()
             "r" -> removeCoin()
         }
+        // creates a win screen for player 2
         if (blackCell == 1){
             println("|--------------------------------------------------|")
             println("|                                                  |")
@@ -128,13 +134,13 @@ fun main() {
     }
 
 }
-
+// creates 16 blank cells
 fun createCells() {
     for (i in 1..16) {
         cells.add("...")
     }
 }
-
+// creates the grid that the game will be played in
 fun showCells() {
     for (i in 1..cells.size) {
         val cellNum = "cell $i"
@@ -155,7 +161,7 @@ fun showCells() {
     println("┘")
 }
 
-
+// this creates the black and white coins that will be placed into the grid to play the game with
 fun addCoins() {
     val coin = "black"
     val index = (2..<16).random()
@@ -179,22 +185,33 @@ fun addCoins() {
         if (count >= 4) break
     }
 }
-
+// this allows the players to decide to move coins to different squares
 fun moveCoin() {
     print("Enter first cell number: ")
     val cell1 = readlnOrNull()?.toIntOrNull()
 
     print("Enter second cell number: ")
     val cell2 = readlnOrNull()?.toIntOrNull()
-
+// skips the players turn if they choose to enter something invalid
     if (cell1 == null || cell2 == null) {
-        println("Invalid number entered.")
+        println("Invalid number entered. Skipping turn...")
         return
     }
 
+    if (cell1 !in 0..16 || cell2 !in 0..16) {
+        println("Invalid number entered. Skipping turn...")
+        return
+    }
+
+// turns the value received from the player into something that makes sence to the program
     val index1 = cell1 - 1
     val index2 = cell2 - 1
 
+    if (cells[index2] != "...") {
+        println("Invalid number entered. Skipping turn...")
+        return
+    }
+// moves the chosen cell to the location chosen by the player
     if (index1 in 0..15 && index2 in 0..15) {
         val temp = cells[index1]
         cells[index1] = cells[index2]
@@ -203,7 +220,7 @@ fun moveCoin() {
         println("Invalid cell number.")
     }
 }
-
+// checks to see if there is a coin in the 1 cell so that the game can be won
 fun removeCoin() {
     val index = 0
     if (cells[index] == "black") {
