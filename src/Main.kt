@@ -203,7 +203,7 @@ fun moveCoin() {
         return
     }
 
-// turns the value received from the player into something that makes sence to the program
+// turns the value received from the player into something that makes scense to the program
     val index1 = cell1 - 1
     val index2 = cell2 - 1
 

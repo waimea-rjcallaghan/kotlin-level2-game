@@ -4,35 +4,65 @@ The test results show the actual outcome of the testing, following the [Test Pla
 
 ---
 
-## Example Test Name
+## Game is playable
 
-Example test description. Example test description.Example test description. Example test description.Example test description. Example test description.
+played through the game to make sure that the game is playable.
 
 ### Test Data Used
 
-Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data.
+I used the move function and remove function until the black coin was removed and the game was won by one of the two players.
 
 ### Test Result
 
-![example.png](screenshots/example.png)
+![example.png](screenshots/gameplayable-test.gif)
 
-Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result.
+Valid The test was successful and the game worked.
+
+---
+
+## The player can read the instructions for the game.
+
+The player can ask for the game instructions so that they can understand how to play the game.
+
+### Test Data Used
+
+I will try to enter y in order to agree to receiving the instructions.
+
+### Test Result
+
+![example.png](screenshots/instructions-test.gif)
+
+Valid. The test was successful and I was able to receive and read the instructions.
+
+---
+
+## Player can input names.
+
+I will test that the player is capible of entering their name into the program.
+
+### Test Data To Use
+
+I will try entering two seperate names into the program "Ben" and "Ryder".
+
+### Test Result
+
+![example.png](screenshots/nameinput-test.gif)
+
+Valid. I was able to input both names into the program.
 
 ---
 
 ## Example Test Name
 
-Example test description. Example test description.Example test description. Example test description.Example test description. Example test description.
+Example test description. Example test description. Example test description. Example test description. Example test description. Example test description.
 
-### Test Data Used
+### Test Data To Use
 
-Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data.
+Details of test data and reasons for selection. Details of test data and reasons for selection. Details of test data and reasons for selection.
 
-### Test Result
+### Expected Test Result
 
-![example.png](screenshots/example.png)
-
-Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result.
+Statement detailing what should happen. Statement detailing what should happen. Statement detailing what should happen. Statement detailing what should happen.
 
 ---
 
