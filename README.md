@@ -1,4 +1,4 @@
-# PROJECT NAME HERE
+# PROJECT NAME HERE: Pinned Game
 
 by Ryder Callaghan
 
@@ -20,12 +20,17 @@ The project is written in the [Kotlin](https://kotlinlang.org) programming langu
 ## Project Files
 
 - Program source code can be found in the [src](src/) folder
-- Program test plan is in [test-plan.md](docs/test-plan.md) in the docs folder
-- Program test evidence is in [test-results.md](docs/test-results.md) in the docs folder
+- Program test plan is in [test-plan.md](docs/evidence/test-plan.md) in the docs folder
+- Program test evidence is in [test-results.md](docs/evidence/test-results.md) in the docs folder
 
 ---
 
 ## Project Description
+
+- made a game where players move coins around a grid
+- until one player removes the black coin and they win
+
+-Full game rules below
 
 **## Pinned 📌
 

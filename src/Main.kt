@@ -77,6 +77,8 @@ fun main() {
     addCoins()
     showCells()
 
+
+    // loop
     while (true) {
         println("player one $player1's turn")
         println("[M]ove coin")
@@ -185,7 +187,7 @@ fun addCoins() {
         if (count >= 4) break
     }
 }
-// this allows the players to decide to move coins to different squares
+// this allows the players to decide to move coins to different cells on the grid
 fun moveCoin() {
     print("Enter first cell number: ")
     val cell1 = readlnOrNull()?.toIntOrNull()
@@ -220,7 +222,7 @@ fun moveCoin() {
         println("Invalid cell number.")
     }
 }
-// checks to see if there is a coin in the 1 cell so that the game can be won
+// checks to see if there is a coin in the 1 cell so that the program can remove it from the grid
 fun removeCoin() {
     val index = 0
     if (cells[index] == "black") {

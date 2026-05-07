@@ -4,29 +4,13 @@ The test results show the actual outcome of the testing, following the [Test Pla
 
 ---
 
-## boundary test
+## The player can decide to read the instructions for the game. - Valid
 
-testing that the program can move or remove values that are at the boundary of the valid range.
-
-### Test Data Used
-
-I used the move function to move one coin .
-
-### Test Result
-
-![example.png](screenshots/gameplayable-test.gif)
-
-Valid The test was successful and the game worked.
-
----
-
-## The player can read the instructions for the game.
-
-The player can ask for the game instructions so that they can understand how to play the game.
+The player can input y to receive the game instructions so that they can understand how to play the game.
 
 ### Test Data Used
 
-I will try to enter y in order to agree to receiving the instructions.
+Valid. I will try to enter y in order to agree to receiving the instructions.
 
 ### Test Result
 
@@ -36,13 +20,13 @@ Valid. The test was successful and I was able to receive and read the instructio
 
 ---
 
-## Player can input names.
+## Player can input names. - VALID
 
-I will test that the player is capible of entering their name into the program.
+I will test that the player is capable of entering their name into the program.
 
 ### Test Data used
 
-I will try entering two seperate names into the program "Ben" and "Ryder".
+I will try entering two separate names into the program "Ben" and "Ryder".
 
 ### Test Result
 
@@ -52,22 +36,39 @@ Valid. I was able to input both names into the program.
 
 ---
 
-## Player is able to win.
+## board can be set up - GAMEPLAY
 
-The player is able to win and beat the other player.
+Testing if the program can set up the board to play the game on.
 
-### Test Data used
+### Test Data To Use
 
-I will remove the black coin from the grid as one of the players in order to win the game.
+I will start the game to see if it can set up the board.
 
 ### Test Result
 
-valid. The test was successful and the player is able to win.
+Gameplay. The test was successful and the program was able to set up the game board.
 
-![example.png](screenshots/wintest-test.gif)
+![example.png](screenshots/setup-test.gif)
+
 ---
 
-## Player can move coins
+## The players take turns - GAMEPLAY
+
+This test makes sure that players can take turns.
+
+### Test Data To Use
+
+I will use my turn as player one and see if the program switches to player two afterwards.
+
+### Test Result
+
+Gameplay. The test was successful and the program was able to switch from player one to player two after player one had taken his turn.
+
+![example.png](screenshots/turn-test.gif)
+
+---
+
+## Player can move coins - VALID
 
 Testing that the player can move the black and white coins to progress the game.
 
@@ -83,35 +84,41 @@ valid. The test was successful and I was able to move the coins around the grid.
 
 ---
 
-## board can be set up
 
-Testing if the program can set up the board to play the game on.
+## Coin placement and removal - BOUNDARIES
 
-### Test Data To Use
+testing that the program can move or remove values that are at the boundary of the valid range.
 
-I will start the game to see if it can set up the board.
+### Test Data Used
 
-### Test Result
-
-Valid. The test was successful and the program was able to set up the game board.
-
-![example.png](screenshots/setup-test.gif)
-
----
-
-## The players take turns
-
-This test makes sure that players can take turns.
-
-### Test Data To Use
-
-I will use my turn as player one and see if the program switches to player two afterwards.
+I used the move function to move one coin from cell 16 to cell 11 and removed a coin from cell one.
 
 ### Test Result
 
-Valid. The test was successful and the program was able to switch from player one to player two after player one had taken his turn.
+![example.png](screenshots/boundaryone-test.gif)
 
-![example.png](screenshots/turn-test.gif)
+
+Valid The test was successful and the game worked.
 
 ---
+
+
+## Player is able to win - GAMEPLAY
+
+The player is able to win and beat the other player.
+
+### Test Data used
+
+I will remove the black coin from the grid as one of the players in order to win the game.
+
+### Test Result
+
+Gameplay. The test was successful and the player is able to win.
+
+![example.png](screenshots/wintest-test.gif)
+---
+
+
+
+
 
